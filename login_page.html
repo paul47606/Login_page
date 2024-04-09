@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+        body{
+            height: 100vh;
+            background-color: antiquewhite;
+        }
+        .container{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .link{
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px ;
+            cursor: pointer;
+            color: aqua;
+        }
+        .form{
+            position: relative;
+            width: 350px;
+            height: 350px;
+            background-color: white;
+            box-shadow: rgba(100,100,111,0.2) 0 7px 29px 0; 
+            border-radius: 10px;
+            animation-name: fadedrop;
+            animation-duration: 2s;
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+        @keyframes fadedrop{
+            0%{
+                opacity: 0.4;
+                transform: translate(0,-50%);
+            }
+            50%{
+                opacity: 0.6;
+                transform: translate(0,30%);
+            }
+            100%{
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .form_header{
+            border-radius: 10px 10px 0 0;
+            background-color: brown;
+            padding: 10px;
+            text-align: center;
+        }
+        .form_body{
+            padding: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(6,45,88);
+            font-size: 18px;
+        }
+        .field{
+            font-size: 16px;
+            font-weight: 400;
+            width: 100%;
+            padding: 10px 20px;
+            border: 1px solid black;
+            outline: none;
+            border-radius: 30px;
+            margin: 10px 10px 0 0;
+        }
+        button{
+            padding: 8px 20px;
+            border: none;
+            outline: none;
+            width: 100%;
+            background-color: rgb(29,93,136);
+            color: white;
+            border-radius: 30px;
+            font-size: 20px;
+            
+        }
+        .Forget{
+            float: right;
+        }
+        .option{
+            padding: 0 10px;
+            margin: 15px 0 25px;
+        }
+        .form_footer{
+            text-align: center;
+        }
+        .rember{
+            margin-right: 5px ;
+        }
+    </style>  
+</head>
+<body>
+    <div class="container">
+        <div class="link">Login</div>
+        <div class="form">
+            <div class="form_header">
+                <H1>Login Form</H1>
+            </div>
+            <div class="form_body">
+                <form action="">
+                    <input type="email" placeholder="Email address" class="field">
+                    <input type="password" placeholder="password" class="field">
+                    <div class="option">
+                        <input type="checkbox" name="" class="rember">Remember me
+                        <a href="#" class="Forget">Forget password</a>
+                    </div>
+                    <button>Login</button>
+                </form>
+            </div>
+            <div class="form_footer">
+                <span>Not a memner?</span>
+                <a href="#">signup now</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const linkEle = document.querySelector(".link");
+        const formEle = document.querySelector(".form");
+        
+        linkEle.onclick = function(){
+            formEle.classList.toggle("show")
+        }
+
+    </script>
+</body>
+</html>
